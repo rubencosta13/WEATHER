@@ -1,6 +1,14 @@
 .temperature{
-    color: green;
-    font-family: 'Times New Roman';
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
-    font-size: 50px;
+    font-size: 20px;
 }
+
+.icons{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 15px;
+}
+

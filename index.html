@@ -5,28 +5,70 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles.css" rel="stylesheet">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="icon" href='sun.png'>
+ 
     <title>Weather and Forecast</title>
+    <nav class="navbar navbar-default">
+            <div class="container-fluid">
+
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Check weather and forecast</a></li>
+                <li><a href="https://ruben-calculator.vercel.app/">Simple Calculator </a></li>
+                <li><a href="https://rubencostaportfolio.vercel.app/">My Portfolio</a></li>
+            </ul>
+            </div>
+    </nav>
+
 </head>
 <body>
+
+    
+    <div class="temperature">
+    <input type="text" id='city' placeholder="Name of the city" style="width: 40%">
+    <button onclick="fi()">Get weather</button>
+    <br>    </br>
+    <p id="location"></p>
+    <p class="temp"id="temp"></p>
+    <p id="wind"></p>
+    <p id="desc"></p>
+
+    </div>
     <script>
-        function enviar() {
-            const url = 'https://goweather.herokuapp.com/weather/'
-            var info = document.getElementById('text').value
-            const full_url = url+info
+        async function fi() {
+            const api_url = 'https://goweather.herokuapp.com/weather/'
+            var cidade = document.getElementById('city').value
+            const full_url = api_url + cidade
             console.log(full_url)
+            const response = await fetch(full_url)
+            const data = await response.json()
+            console.log(data)
+            document.getElementById("location").innerText = 'Weather for: '+cidade
+            document.getElementById("temp").innerText = 'Temperature: '+data.temperature
+            document.getElementById("wind").innerText = 'Wind speed: '+data.wind
+
+            document.getElementById("desc").innerText = 'Description: '+data.description
+
         }
     </script>
-    <div class="temperature">
-        <p>Meteorologia</p>
-    <input type="text" id='text' placeholder="Name of the city" style="width: 40%">
-    <button class="enviar" onclick="enviar()"> Get weather </button>
-    <div id="meteo">
-    <h1>
-    <script>
-        meteo.innerText = 'weather'
-    </script>
-    </h1>
-    </div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/><br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
+    <div class="icons">Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 </body>
 </html>
