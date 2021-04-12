@@ -5,18 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles.css" rel="stylesheet">
-   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+ 
     <title>Weather and Forecast</title>
 </head>
 <body>
-    <div class="temperature"></div>
-    <input type="text" id='text' placeholder="Name of the city" style="width: 40%">
-    <button onclick="enviar()"> Get weather </button>
-    <script src="script.js">
-        function enviar() {
-            const url = 'https://goweather.herokuapp.com/weather/'
-            var info = document.getElementById('text').value
-            console.log(url+info)
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Weather and Forecast</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Check weather and forecast</a></li>
+            <li><a href="https://ruben-calculator.vercel.app/">Simple Calculator </a></li>
+            <li><a href="https://rubencostaportfolio.vercel.app/">My Portfolio</a></li>
+          </ul>
+        </div>
+      </nav>
+    <div class="temperature">
+    <input type="text" id='city' placeholder="Name of the city" style="width: 40%">
+    <button onclick="fi()">Click me</button>
+    <br></br>
+    <p id="location"></p>
+    <p class="temp"id="temp"></p>
+    <p id="wind"></p>
+    <p id="desc"></p>
+    
+    </div>
+    <script>
+        async function fi() {
+            const api_url = 'https://goweather.herokuapp.com/weather/'
+            var cidade = document.getElementById('city').value
+            const full_url = api_url + cidade
+            console.log(full_url)
+            const response = await fetch(full_url)
+            const data = await response.json()
+            console.log(data)
+            document.getElementById("location").innerText = 'Weather for: '+cidade
+            document.getElementById("temp").innerText = 'Temperature: '+data.temperature
+            document.getElementById("wind").innerText = 'Wind speed: '+data.wind
+            document.getElementById("desc").innerText = 'Description: '+data.description
+
         }
     </script>
 </body>
