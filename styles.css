@@ -1,14 +1,21 @@
 .temperature{
     text-align: center;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bold;
+    font-family: 'Helvetica Neue';
     font-size: 20px;
 }
 
 .icons{
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
-    font-weight: bold;
     font-size: 15px;
+}
+
+.corpo{
+    background-color: aquamarine;
+}
+
+._wau0f7{
+    align-content: center;
+    text-align: center;
 }
 
