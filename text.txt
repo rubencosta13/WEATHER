@@ -1,0 +1,8 @@
+http://dataservice.accuweather.com/locations/v1/cities/search?apikey=QyCpWNn8DToUOPS57lfjsnnGXgzI4MTQ&q=${city}&language=en-us&details=false
+
+http://dataservice.accuweather.com/forecasts/v1/daily/1day/${data[0].Key}?apikey=QyCpWNn8DToUOPS57lfjsnnGXgzI4MTQ&language=pt-pt&details=false&metric=true HTTP/1.1
+
+http://dataservice.accuweather.com/currentconditions/v1/273891?apikey=QyCpWNn8DToUOPS57lfjsnnGXgzI4MTQ&language=en-us&details=false
+
+273891
+api key:QyCpWNn8DToUOPS57lfjsnnGXgzI4MTQ
