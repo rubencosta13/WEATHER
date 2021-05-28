@@ -48,10 +48,8 @@ async function fi(op) {
     }
 }
 imperial.addEventListener('click', imperial =>{
-    console.log('Imperial')
     fi('i')
 })
 metric.addEventListener('click', metric =>{
-    console.log('Metric')
     fi('m')
 })
