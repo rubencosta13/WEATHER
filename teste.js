@@ -11,16 +11,16 @@ const metric = document.getElementById('metric')
 async function fi(op) {
     var city = document.getElementById('city').value
     city = city.toString().replace(/\s+/g,"+")
-    const api_loc_id = `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=QyCpWNn8DToUOPS57lfjsnnGXgzI4MTQ&q=${city}&language=en-us&details=false`
+    const api_loc_id = `https://cors-anywhere.herokuapp.com/http://dataservice.accuweather.com/locations/v1/cities/search?apikey=QyCpWNn8DToUOPS57lfjsnnGXgzI4MTQ&q=${city}&language=en-us&details=false`
     const response = await fetch(api_loc_id)
     const data = await response.json()
-    const forecast = `http://dataservice.accuweather.com/forecasts/v1/daily/1day/${data[0].Key}?apikey=QyCpWNn8DToUOPS57lfjsnnGXgzI4MTQ&language=en-us&details=false&metric=true`
+    const forecast = `https://cors-anywhere.herokuapp.com/http://dataservice.accuweather.com/forecasts/v1/daily/1day/${data[0].Key}?apikey=QyCpWNn8DToUOPS57lfjsnnGXgzI4MTQ&language=en-us&details=false&metric=true`
     const response1 = await fetch(forecast)
     const condition = await response1.json()
-    const forecast2 = `http://dataservice.accuweather.com/forecasts/v1/daily/1day/${data[0].Key}?apikey=QyCpWNn8DToUOPS57lfjsnnGXgzI4MTQ&language=en-us&details=false&metric=false`
+    const forecast2 = `https://cors-anywhere.herokuapp.com/http://dataservice.accuweather.com/forecasts/v1/daily/1day/${data[0].Key}?apikey=QyCpWNn8DToUOPS57lfjsnnGXgzI4MTQ&language=en-us&details=false&metric=false`
     const response4 = await fetch(forecast2)
     const conditionI = await response4.json()
-    const currentcondition = `http://dataservice.accuweather.com/currentconditions/v1/${data[0].Key}?apikey=QyCpWNn8DToUOPS57lfjsnnGXgzI4MTQ&language=en-us&details=true`
+    const currentcondition = `https://cors-anywhere.herokuapp.com/http://dataservice.accuweather.com/currentconditions/v1/${data[0].Key}?apikey=QyCpWNn8DToUOPS57lfjsnnGXgzI4MTQ&language=en-us&details=true`
     const response2 = await fetch(currentcondition)
     const data1 = await response2.json()
     if(data.wind === '' && data.temperature === ''){
