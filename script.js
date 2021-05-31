@@ -9,20 +9,6 @@ const imperial = document.getElementById('imperial')
 const metric = document.getElementById('metric')
 languages = document.getElementById('languages').style.visibility = 'hidden'
 
-function getlang(op) {
-    var language_select = document.getElementById("languages");
-    //var result = document.getElementById("selected-language");
-
-    language_select.addEventListener('change', function (event) {
-        var selected_value = this.value;
-        //var selected_text = this.options[this.selectedIndex].text;
-        //result.innerText = selected_value + '\n' + selected_text;
-        let locale = selected_value
-        fi(op, locale)
-    });
-}
-
-
 async function fi(op) {
     let locale = 'en-us'
     let WEATHER_API_KEY = 'QyCpWNn8DToUOPS57lfjsnnGXgzI4MTQ'
@@ -72,4 +58,3 @@ imperial.addEventListener('click', imperial =>{
 metric.addEventListener('click', metric =>{
     fi('m')
 })
-getlang()
