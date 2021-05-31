@@ -8,6 +8,28 @@ const map = document.getElementById('map').style.visibility = 'hidden'
 const imperial = document.getElementById('imperial')
 const metric = document.getElementById('metric')
 
+$(function () {
+    $("#languages").change(function() {
+        var val = $(this).val();
+        var text = $("#languages option:selected").text();
+        $("#selected-language").html(val + '<br>' + text);
+    });
+});
+
+function getlang() {
+    var language_select = document.getElementById("languages");
+    var result = document.getElementById("selected-language");
+
+    language_select.addEventListener('change', function (event) {
+        var selected_value = this.value;
+        var selected_text = this.options[this.selectedIndex].text;
+        result.innerText = selected_value + '\n' + selected_text;
+        console.log(selected_value)
+        console.log(selected_text)
+    });
+}
+
+
 async function fi(op) {
     var city = document.getElementById('city').value
     city = city.toString().replace(/\s+/g,"+")
@@ -55,3 +77,4 @@ imperial.addEventListener('click', imperial =>{
 metric.addEventListener('click', metric =>{
     fi('m')
 })
+getlang()
