@@ -7,7 +7,6 @@ const darkmode = document.getElementById('darkmode')
 const map = document.getElementById('map').style.visibility = 'hidden'
 const imperial = document.getElementById('imperial')
 const metric = document.getElementById('metric')
-languages = document.getElementById('languages').style.visibility = 'hidden'
 
 async function fi(op) {
     let locale = 'en-us'
