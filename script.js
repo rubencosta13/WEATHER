@@ -23,7 +23,7 @@ async function fi(op) {
     const forecast2 = `http://dataservice.accuweather.com/forecasts/v1/daily/1day/${data[0].Key}?apikey=${WEATHER_API_KEY}&language=${locale}&details=false&metric=false`
     const response4 = await fetch(forecast2)
     const conditionI = await response4.json()
-    const currentcondition = `http://dataservice.accuweather.com/currentconditions/v1/${data[0].Key}?apikey=${api}&language=${locale}&details=true`
+    const currentcondition = `http://dataservice.accuweather.com/currentconditions/v1/${data[0].Key}?apikey=${WEATHER_API_KEY}&language=${locale}&details=true`
     const response2 = await fetch(currentcondition)
     const data1 = await response2.json()
     if(data.wind === '' && data.temperature === ''){
