@@ -4,19 +4,21 @@ const meteo = document.querySelectorAll('[meteo]')
 const cidade = document.getElementById('cidade')
 const things = document.getElementById('things')
 const darkmode = document.getElementById('darkmode')
-const map = document.getElementById('map').style.visibility = 'hidden'
+const map = document.getElementById('views').style.visibility = 'hidden'
 const imperial = document.getElementById('imperial')
 const metric = document.getElementById('metric')
 
 async function fi(op) {
     let locale = 'en-us'
     let WEATHER_API_KEY = 'QyCpWNn8DToUOPS57lfjsnnGXgzI4MTQ'
+    let tomtom = 'r1EoUu8s6GHdTPWKIA6k47axQ21Ptpmh'
+
     var city = document.getElementById('city').value
     city = city.toString().replace(/\s+/g,"+")
     const api_loc_id = `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${WEATHER_API_KEY}&q=${city}&language=${locale}&details=false`
     const response = await fetch(api_loc_id)
     const data = await response.json()
-    const forecast = `http://dataservice.accuweather.com/forecasts/v1/daily/1day/${data[0].Key}?apikey=${WEATHER_API_KEY}&language=${locale}&details=false&metric=true`
+    const forecast = `http://dataservice.accuweather.com/forecasts/v1/daily/1day/${data[0].Key}?apikey=${WEATHER_API_KEY}&language=${locale}&details=true&metric=true`
     const response1 = await fetch(forecast)
     const condition = await response1.json()
     const forecast2 = `http://dataservice.accuweather.com/forecasts/v1/daily/1day/${data[0].Key}?apikey=${WEATHER_API_KEY}&language=${locale}&details=false&metric=false`
@@ -25,6 +27,7 @@ async function fi(op) {
     const currentcondition = `http://dataservice.accuweather.com/currentconditions/v1/${data[0].Key}?apikey=${WEATHER_API_KEY}&language=${locale}&details=true`
     const response2 = await fetch(currentcondition)
     const data1 = await response2.json()
+
     if(data.wind === '' && data.temperature === ''){
         alert('Nao tem dados!')
         document.getElementById('things').style.visibility = 'hidden'
