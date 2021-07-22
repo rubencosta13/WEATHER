@@ -1,9 +1,0 @@
-<script>
-        function enviar() {
-            const url = 'https://goweather.herokuapp.com/weather/'
-            var info = document.getElementById('text').value
-            const full_url = url+info
-            console.log(full_url)
-            document.getElementById('[meteo]').innerHTML = full_url
-        }
-    </script>
