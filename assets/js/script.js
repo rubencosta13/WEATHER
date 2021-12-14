@@ -4,7 +4,7 @@ const botao = document.getElementById("btn"),
     cidade = document.getElementById("cidade"),
     things = document.getElementById("things"),
     darkmode = document.getElementById("darkmode"),
-    map = (document.getElementById("views").style.visibility = "hidden"),
+    map = document.getElementById("views").style.visibility = "visible",
     imperial = document.getElementById("imperial"),
     metric = document.getElementById("metric");
 
@@ -25,7 +25,7 @@ async function fi(e) {
         s = `http://dataservice.accuweather.com/currentconditions/v1/${a[0].Key}?apikey=${t}&language=en-us&details=true`,
         y = await fetch(s),
         p = await y.json();
-    if ("" === a.wind && "" === a.temperature) return alert("Nao tem dados!"), void (document.getElementById("things").style.visibility = "hidden");
+    if ("" === a.wind && "" === a.temperature) return alert("No data available!"), void (document.getElementById("things").style.visibility = "hidden");
     "i" === e &&
         ((document.getElementById("location").innerText = "Weather for: " + a[0].EnglishName),
         (document.getElementById("windimp").innerText = ""),
