@@ -1,0 +1,42 @@
+.temperature {
+    text-align: center;
+    font-family: "Helvetica";
+    font-size: 20px;
+
+}
+.icons {
+    text-align: center;
+    font-family: "Helvetica";
+    font-size: 15px;
+}
+body {
+    background: rgb(63,234,251);
+    background: linear-gradient(90deg, rgba(58,180,166,1) 0%, rgba(29,253,100,1) 50%, rgba(168,252,69,1) 100%);
+    color: white;
+
+}
+
+
+._wau0f7 {
+    align-content: center;
+    text-align: center;
+}
+body {
+    background-color: black;
+    color: white;
+}
+.dark-text {
+    color: black;
+}
+.btn1 {
+    color: black;
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    background-color: black;
+}
