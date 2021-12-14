@@ -1,5 +1,13 @@
 name: Check Spelling
 on:
+  push:
+    paths:
+        - '**.js'
+        - '**.vue'
+        - '**.txt'
+        - '**.html'
+        - '**.md'
+
   pull_request:
     paths:
     - '**.js'
